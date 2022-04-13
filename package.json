@@ -1,0 +1,30 @@
+{
+  "name": "walk-the-cat",
+  "version": "1.0.0",
+  "description": "Front-End-Capstone",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "concurrently \"nodemon server.js\" \"cd ./client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walk-the-cat/walk-the-cat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walk-the-cat/walk-the-cat/issues"
+  },
+  "homepage": "https://github.com/walk-the-cat/walk-the-cat#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15"
+  }
+}
