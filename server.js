@@ -15,15 +15,18 @@ app.use(cors())
 
 
 //Get all
-app.get("/item/", async (req, res) => {
-  const allTodo = await pool.query("SELECT * FROM card_table")
-  res.json(allTodo.rows);
-})
+// app.get("/item/", async (req, res) => {
+//   const allTodo = await pool.query("SELECT * FROM card_table")
+//   res.json(allTodo.rows);
+// })
 
 //Get a todo
-app.get('/item/:card_id', async (req, res) => {
-  const { card_id } = req.params;
-  const todo = await pool.query('SELECT * FROM card_table INNER JOIN item_table ON card_table.id = item_table.id WHERE card_table.id = $1', [card_id]);
+app.get('/item/', async (req, res) => {
+  const todo = await pool.query(`
+    SELECT * FROM card_table 
+    INNER JOIN item_table 
+    ON card_table.id = item_table.id 
+    `);
   res.send(todo.rows[0])
 });
 

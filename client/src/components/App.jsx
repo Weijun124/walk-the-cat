@@ -2,27 +2,23 @@
 import '../App.css';
 import React, {useEffect, useState } from 'react';
 import axios from 'axios';
-
+import CardContainer from "./CardContainer";
 
 function App() {
-  const [data, setData ] = useState(null)
-  // const [title, setTitle] = useState(null)
-  
+  const [data, setData] = useState([]);
   
   useEffect(()=>{
     axios.get("/item").then(res => {
-      setData(res.data)
-      console.log(data);
+      setData([...data, res.data])
+      console.log(res.data);
     })
   },[])
   if (!data) return null;
   return (
     <div className="App">
-    {/* {data.map(card =>{
-      <p key={card.id}>its working {card.title}</p>
-
-    })} */}
-    <p>{data[0].title}</p>
+      {/* <NavBar className="navbar" data={} /> */}
+      {/* <Header className="header" data={} /> */}
+      <CardContainer className="card-container" data={data} /> 
     </div>
   );
 }
