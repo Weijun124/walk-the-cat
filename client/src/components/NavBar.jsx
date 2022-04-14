@@ -27,16 +27,17 @@ const NavBar = (props) => {
                     <a className="nav-link">Recent</a>
                     <a className="nav-link">More</a>
                 </nav>
-                <button className="nav-button">Create</button>
+                <button className="nav-create-button">Create</button>
             </div>
             <div className="nav-right">
                 <button className="search-button">
-                    <i className="fa-solid fa-magnifying-glass"></i>
+                    {/* <i className="fa-solid fa-magnifying-glass"></i> */}
+                    <img src="./pictures/search-icon.png" />
                 </button>
                 <input className="nav-search" type="text" placeholder="Search"/>
                 <p className="help">i</p>
                 <a className="notification-icon"><img src="./pictures/notification-icon.png"/></a>
-                <a class="gitHub" href="https://github.com/coltskeen/MVP_full_stack_project"><img id="gitIcon" src="pictures/GitHub-Mark-Light-32px.png" border="0" /></a>
+                <a class="gitHub" href="https://github.com/walk-the-cat/walk-the-cat/"><img id="gitIcon" src="pictures/GitHub-Mark-Light-32px.png" border="0" /></a>
             </div>
         </header>
     )

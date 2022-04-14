@@ -83,9 +83,18 @@ body{
 .nav-link{
     color: white;
     padding: 1em;
+    cursor: pointer;
 }
 
-.nav-button {
+.nav-link:hover {
+    background-color: rgb(102, 163, 197);
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 8px 12px;
+    /* height: 10px; */
+}
+
+.nav-create-button {
     color: #fff;
     cursor: pointer;
     font-family: -apple-system,"system-ui","Segoe UI",Roboto,"Noto Sans",Ubuntu,"Droid Sans","Helvetica Neue",sans-serif;
@@ -101,13 +110,18 @@ body{
     border-radius: 3px;
 }
 
+.nav-create-button:hover {
+    background-color: rgb(102, 163, 197);
+}
+
 .search-button {
     height: 35px;
-    padding: 5px;
+    padding: 8px 0 5px 5px;
     border: 1px solid rgb(102, 163, 197);
     border-right: none;
     background-color: rgb(51, 132, 178);
     border-radius: 3px 0 0 3px;
+    cursor: pointer;
 }
 
 .nav-search {
