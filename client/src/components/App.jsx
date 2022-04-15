@@ -3,6 +3,7 @@ import '../App.css';
 import React, {useEffect, useState } from 'react';
 import axios from 'axios';
 import CardContainer from "./CardContainer";
+import Header from './Header';
 
 function App() {
   const [data, setData] = useState([]);
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="App">
       {/* <NavBar className="navbar" data={} /> */}
-      {/* <Header className="header" data={} /> */}
+      <Header className="header" />
       <CardContainer className="card-container" data={data} /> 
     </div>
   );

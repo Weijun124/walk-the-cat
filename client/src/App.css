@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+
+/* Start Body */
+body, button, html, input, select, textarea {
+  /* background: #172b4d; */
+  background-color: #0179bf;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Start of Header */
+.header .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 5px;
+}
+.header div{
+  display: flex;
+  align-items: center;
+}
+.header-logo{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+  padding: 0 12px;
+  margin-left: 20px;
+  color: #fff;
+}
+.header-border-left{
+  border-left: 1px solid #ffffff3d;
+  float: left;
+  height: 16px;
+}
+.header-text{
+  padding-right: 12px;
+  color: #fff;
+}
+.header-icon{
+  color: #fff;
+  padding: 6px;
+}
+
+.header-member{
+  background-color: #8c9093;
+  border-radius: 25em;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  margin-left: 10px;
+}
+.header-member-initials{
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  height: 32px;
+  left: 0;
+  line-height: 32px;
+  text-align: center;
+  width: 100%;
+}
+.header-facepile{
+  float: left;
+  height: 28px;
+  margin: 0 0 0 -2px;
+  width: 28px;
+  z-index: 1;
+}
+.header-right{
+  color: #fff;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.header-btn:not(.no-edit) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.header-btn{
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  margin: 6px 6px 4px 6px;
+  max-width: 400px;
+  cursor: pointer;
+  text-overflow: ellipsis
+}
+.header-btn:hover {
+  background-color: rgb(102, 163, 197);
+  /* border-radius: 3px;
+  font-size: 14px;
+  padding: 8px 12px; */
+}
+@media(max-width: 500px){
+  .header .container{
+    flex-direction: column;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .header-right{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    text-align: center;
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
