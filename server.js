@@ -23,11 +23,11 @@ app.use(cors())
 //Get a todo
 app.get('/item/', async (req, res) => {
   const todo = await pool.query(`
-    SELECT * FROM card_table 
+    SELECT title, id, item_id, description FROM card_table 
     INNER JOIN item_table 
-    ON card_table.id = item_table.id 
+    ON card_table.id = item_table.card_id 
     `);
-  res.send(todo.rows[0])
+  res.send(todo.rows)
 });
 
 
