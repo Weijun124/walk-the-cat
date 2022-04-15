@@ -11,7 +11,7 @@ body{
 }
 
 .nav-bar {
-    /* height: 200px; */
+    height: 200px;
     width: 100%;
     backdrop-filter: blur(6px);
     background-color: #026aa7;
@@ -22,7 +22,7 @@ body{
     font-family: -apple-system,"system-ui","Segoe UI",Roboto,"Noto Sans",Ubuntu,"Droid Sans"   "Helvetica Neue",sans-serif;
     font-size: 14px;
     line-height: 20px;
-    max-height: 60px;
+    /* max-height: 60px; */
     overflow: hidden;
     padding: 6px 4px;
     transition: background-color 300ms;
@@ -80,19 +80,75 @@ body{
     height: 40px;
 }
 
-.nav-link{
+.dropdown-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown-btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     color: white;
     padding: 1em;
     cursor: pointer;
+    background-color: #026aa7;
+    border: none;
+    font-size: 16px;
 }
 
-.nav-link:hover {
+.nav-dropdown-btn:hover {
     background-color: rgb(102, 163, 197);
     border-radius: 3px;
-    font-size: 14px;
-    padding: 8px 12px;
-    /* height: 10px; */
+    font-size: 16px;
+    padding: 1em;
+    height: 15px;
 }
+
+.arrow-icon {
+    margin-left: .4em;
+}
+
+.menu {
+    background: #ffffff;
+    border-radius: 8px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 300px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu a {
+    list-style: none;
+    display: block;
+    padding: 15px 20px;
+    margin: 0;
+    border-bottom: 1px solid #dddddd;
+    text-decoration: none;
+    color: white;
+}
+
+/* a {
+    text-decoration: none;
+    color: white;
+} */
 
 .nav-create-button {
     color: #fff;
@@ -137,6 +193,10 @@ body{
     border-radius: 0 3px 3px 0;
 }
 
+.nav-search:focus {
+    outline: none;
+}
+
 input[type='text']::placeholder {color:rgb(255, 255, 255);}
 
 .help {
@@ -159,6 +219,4 @@ input[type='text']::placeholder {color:rgb(255, 255, 255);}
     background-color: rgb(238, 91, 74);
     margin: 1em;
 }
-
-
 
