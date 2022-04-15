@@ -10,13 +10,13 @@ function App() {
   useEffect(()=>{
     axios.get("/item").then(res => {
       setData([...data, res.data])
-      console.log(res.data);
+      // console.log(res.data);
     })
   },[])
   if (!data) return null;
   return (
     <div className="App">
-      <NavBar className="nav-bar" />
+      <NavBar className="nav-bar" data={data}/>
       {/* <Header className="header" data={} /> */}
       <CardContainer className="card-container" data={data} /> 
     </div>

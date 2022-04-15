@@ -11,7 +11,6 @@ body{
 }
 
 .nav-bar {
-    height: 200px;
     width: 100%;
     backdrop-filter: blur(6px);
     background-color: #026aa7;
@@ -22,8 +21,8 @@ body{
     font-family: -apple-system,"system-ui","Segoe UI",Roboto,"Noto Sans",Ubuntu,"Droid Sans"   "Helvetica Neue",sans-serif;
     font-size: 14px;
     line-height: 20px;
-    /* max-height: 60px; */
-    overflow: hidden;
+    max-height: 60px;
+    /* overflow: hidden; */
     padding: 6px 4px;
     transition: background-color 300ms;
 }
@@ -117,7 +116,7 @@ body{
 
 .menu {
     background: #ffffff;
-    border-radius: 8px;
+    border-radius: 3px;
     position: absolute;
     top: 60px;
     right: 0;
@@ -142,7 +141,7 @@ body{
     margin: 0;
     border-bottom: 1px solid #dddddd;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 /* a {
