@@ -1,14 +1,18 @@
-import React, {useState} from "react";
+import Card from "./Card";
+import "../App.css";
+
 
 const CardContainer = (props) => {
-    console.log("Container: ", props.data);
-    // const [featuredRecipe, setFeaturedRecipe] = useState(props.data[0]);
-
-    return (
-        <div>
-            {/* <p>{props.data[2][1]}</p> */}
-        </div>
-    )
-}
+  return (
+    <div className={"card-container"}>
+      <div className={"card-header"}>
+      {props.data.title}
+      </div>
+      {props.data.description.map((element, index) => (
+        <Card data={element} key={props.data.item_id[index]} status={props.data.status[index]}/>
+      ))} 
+    </div>
+  );
+};
 
 export default CardContainer;
