@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer } from 'antd'; 
+// import { Drawer } from 'antd'; 
 const Header = ( )=> {
   
   return (
@@ -10,7 +10,7 @@ const Header = ( )=> {
             <h1 className='header-logo header-text'>Kanban Board</h1>
             <span className='header-border-left'></span>
             <a className='header-btn'>
-                <span className="header-icon"><i class="fa-solid fa-earth-asia"></i></span>
+                <span className="header-icon"><i className="fa-solid fa-earth-asia"></i></span>
                 <span className="header-text">Public</span>
             </a>
             <span className='header-border-left'></span>
@@ -25,7 +25,7 @@ const Header = ( )=> {
                 <span className="header-text">Filter</span>
             </a>    
             <a className='header-btn'>
-                <span className="header-icon"><i class="fa-solid fa-ellipsis"></i></span>
+                <span className="header-icon"><i className="fa-solid fa-ellipsis"></i></span>
                 <span className="header-text">Show menu</span>
             </a>   
         </div>
