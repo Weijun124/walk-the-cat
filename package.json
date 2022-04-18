@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/walk-the-cat/walk-the-cat#readme",
   "dependencies": {
+    "antd": "^4.19.5",
     "axios": "^0.26.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",

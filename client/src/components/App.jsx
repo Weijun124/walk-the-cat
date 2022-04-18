@@ -1,7 +1,8 @@
-import "../App.css";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import '../App.css';
+import React, {useEffect, useState } from 'react';
+import axios from 'axios';
 import CardContainer from "./CardContainer";
+import NavBar from "./NavBar";
 import Header from './Header';
 
 const App = () => {
@@ -18,6 +19,8 @@ const App = () => {
 
   return (
     <div className="App">
+      <NavBar className="nav-bar" data={data}/>
+      {/* <Header className="header" data={} /> */}
       {/* <NavBar className="navbar" data={} /> */}
       <Header className="header" />
       <div className="board-container">
