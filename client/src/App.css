@@ -331,29 +331,29 @@ body, button, html, input, select, textarea {
 }
 
 /* Card & Items CSS Start */
-  .board-container{
+.board-container{
     display: flex;
     float: left;
-  }
+}
 
 .card-container{
-  box-sizing: border-box;
-  display: inline-block;
-  background-color: lightgrey;
-  border-radius: 5px;
-  height: 100%;
-  margin: 4px 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-  white-space: nowrap;
-  width: 272px;
-  }
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: lightgrey;
+    border-radius: 5px;
+    height: 100%;
+    margin: 4px 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 272px;
+}
 
 
 .item-container{
-  background-color: #fff;
-  padding-left: 5px;
+    background-color: #fff;
+    padding-left: 5px;
     border-radius: 5px;
     box-shadow: 0 1px 0 #091e4240;
     cursor: pointer;
@@ -361,27 +361,27 @@ body, button, html, input, select, textarea {
     margin-bottom: 8px;
     max-width: 300px;
     min-height: 20px;
-    position: relative;
+    /* position: relative; */
     text-decoration: none;
-    z-index: 0;
+    /* z-index: 0; */
 }
 
 .status-container{
-  border-radius: 5px;
-  border:1px solid black;
-  max-width: 75px;
+    border-radius: 5px;
+    border:1px solid black;
+    max-width: 75px;
 }
 
 .status-container-complete{
-  border:1px solid green;
-  background-color: green;
-  color: white;
+    border:1px solid green;
+    background-color: green;
+    color: white;
 }
 
 .status-container-incomplete{
-  border:1px solid red;
-  background-color: red;
-  color: white;
+    border:1px solid red;
+    background-color: red;
+    color: white;
 }
 
 
