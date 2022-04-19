@@ -17,7 +17,7 @@ const Card = props => {
       {toggle ? (
         description
       ) : (
-        <input type='text' value={description} onChange={(event) => {
+        <input className="task-input" type='text' value={description} onChange={(event) => {
           setDescription(event.target.value)
         }} onKeyDown={(event) => {
           if (event.keyCode === 13) {
