@@ -7,6 +7,10 @@ import Header from './Header';
 
 const App = () => {
   const [data, setData] = useState([]);
+  const [id, setId] = useState();
+  const [description, setDescription] = useState();
+  // console.log(data);
+  // console.log(id);
 
   useEffect(() => {
     fetchData();
@@ -16,6 +20,7 @@ const App = () => {
     const response = await axios.get("/item");
     setData(response.data);
   }
+
 
   return (
     <div className="App">
