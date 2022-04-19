@@ -1,18 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import Status from "./Status"
+import axios from "axios";
 
 const Card = props => {
-  // console.log("Card:", props.id);
-  // const [cardId, setCardId] = useState();
 
-  // const onAddCard = e => setCardId(e.target.value);
-  // console.log("CardId",cardId);
+  const [toggle, setToggle] = useState(true);
+  const [description, setDescription] = useState(props.data);
+
+  const handleEdit = (update) => {
+    axios.patch("/item", update);
+  }
 
   return (
-    <div className={"item-container"}>
-      <Status status={props.status}/>
-      {props.data}
+    <div className={"item-container"} onDoubleClick={() => { setToggle(false) }}>
+      <Status status={props.status} />
+      {toggle ? (
+        description
+      ) : (
+        <input type='text' value={description} onChange={(event) => {
+          setDescription(event.target.value)
+        }} onKeyDown={(event) => {
+          if (event.keyCode === 13) {
+            const update = {
+              description: event.target.value,
+              item_id: props.item_id
+            }
+            handleEdit(update)
+            setToggle(true)
+          }
+        }} />
+      )
+
+      }
     </div>
-  )}
+  )
+}
 
 export default Card;

@@ -33,10 +33,10 @@ const CardContainer = (props) => {
   return (
     <div className={"card-container"}>
       <div className={"card-header"}>
-      {props.data.title}
+        {props.data.title}
       </div>
       {props.data.description.map((element, index) => (
-        <Card id={props.data.id} data={element} key={props.data.item_id[index]} status={props.data.status[index]}/>
+        <Card id={props.data.id} data={element} item_id={props.data.item_id[index]} key={props.data.item_id[index]} status={props.data.status[index]} />
       ))} 
       <span className="add-item-card">
         <button onClick={onClick} className="add-card">+ Add a card</button>

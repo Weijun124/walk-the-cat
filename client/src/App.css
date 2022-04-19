@@ -337,6 +337,7 @@ body, button, html, input, select, textarea {
 }
 
 .card-container{
+    /* box-sizing: border-box; */
     display: inline-block;
     background-color: lightgrey;
     border-radius: 5px;
@@ -347,10 +348,6 @@ body, button, html, input, select, textarea {
     vertical-align: top;
     white-space: nowrap;
     width: 272px;
-    box-sizing: border-box;
-    font-family: -apple-system,"system-ui","Segoe UI",Roboto,"Noto Sans",Ubuntu,"Droid Sans"   "Helvetica Neue",sans-serif;
-    font-size: 14px;
-    line-height: 20px;
 }
 
 
@@ -364,9 +361,9 @@ body, button, html, input, select, textarea {
     padding: .5em .7em;
     max-width: 300px;
     min-height: 20px;
-    position: relative;
+    /* position: relative; */
     text-decoration: none;
-    z-index: 0;
+    /* z-index: 0; */
 }
 
 .status-container{
