@@ -1,5 +1,5 @@
 import '../App.css';
-import React, {useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CardContainer from "./CardContainer";
 import NavBar from "./NavBar";
@@ -20,12 +20,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBar className="nav-bar" data={data}/>
+      <NavBar className="nav-bar" data={data} />
       <Header className="header" />
       <div className="board-container">
-      {data.map((element) => (
-        <CardContainer data={element} key={element.id} />
-      ))}
+        {data.map((element) => (
+          <CardContainer data={element} key={element.id} />
+        ))}
       </div>
     </div>
   );

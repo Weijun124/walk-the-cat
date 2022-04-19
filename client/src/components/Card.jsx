@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Status from "./Status"
 import axios from "axios";
-
+import DeleteCard from './Delete';
 const Card = props => {
 
   const [toggle, setToggle] = useState(true);
@@ -10,10 +10,11 @@ const Card = props => {
   const handleEdit = (update) => {
     axios.patch("/item", update);
   }
-
+  console.log(props)
   return (
     <div className={"item-container"} onDoubleClick={() => { setToggle(false) }}>
       <Status status={props.status} />
+      <DeleteCard item_id={props.item_id} />
       {toggle ? (
         description
       ) : (
@@ -30,7 +31,6 @@ const Card = props => {
           }
         }} />
       )
-
       }
     </div>
   )
