@@ -17,13 +17,13 @@ const Card = props => {
       {toggle ? (
         description
       ) : (
-        <input type='text' value={description} onChange={(event) => {
+        <input className="task-input" type='text' value={description} onChange={(event) => {
           setDescription(event.target.value)
         }} onKeyDown={(event) => {
           if (event.keyCode === 13) {
             const update = {
               description: event.target.value,
-              item_id: props.id
+              item_id: props.item_id
             }
             handleEdit(update)
             setToggle(true)

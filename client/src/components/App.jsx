@@ -17,11 +17,10 @@ const App = () => {
     setData(response.data);
   }
 
+
   return (
     <div className="App">
       <NavBar className="nav-bar" data={data}/>
-      {/* <Header className="header" data={} /> */}
-      {/* <NavBar className="navbar" data={} /> */}
       <Header className="header" />
       <div className="board-container">
       {data.map((element) => (

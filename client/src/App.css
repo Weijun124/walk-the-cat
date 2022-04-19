@@ -337,7 +337,7 @@ body, button, html, input, select, textarea {
 }
 
 .card-container{
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     display: inline-block;
     background-color: lightgrey;
     border-radius: 5px;
@@ -353,12 +353,12 @@ body, button, html, input, select, textarea {
 
 .item-container{
     background-color: #fff;
-    padding-left: 5px;
     border-radius: 5px;
     box-shadow: 0 1px 0 #091e4240;
     cursor: pointer;
     display: block;
-    margin-bottom: 8px;
+    margin: .5em .2em;
+    padding: .5em .7em;
     max-width: 300px;
     min-height: 20px;
     /* position: relative; */
@@ -367,22 +367,62 @@ body, button, html, input, select, textarea {
 }
 
 .status-container{
-    border-radius: 5px;
-    border:1px solid black;
     max-width: 75px;
+    border-radius: 5px;
+    padding-bottom: .5em;
 }
 
 .status-container-complete{
-    border:1px solid green;
     background-color: green;
     color: white;
+    border:1px solid green;
+    border-radius: 5px;
+    height: 5px;
 }
 
 .status-container-incomplete{
-    border:1px solid red;
     background-color: red;
     color: white;
+    border:1px solid red;
+    border-radius: 5px;
+    height: 5px;
 }
 
+.add-item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 
+.add-card, .add-template-card {
+    font-family: -apple-system,"system-ui","Segoe UI",Roboto,"Noto Sans",Ubuntu,"Droid Sans"   "Helvetica Neue",sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: grey;
+    background-color: lightgrey;
+    border: none;
+    border-radius: 5px;
+    margin: .2em .5em .5em .2em;
+    width: 85%;
+    text-align: left;
+    padding: .5em;
+}
+
+.add-card:hover, .add-template-card:hover {
+    background-color: rgb(245, 244, 244);
+}
+
+.add-template-card {
+    width: 15%;
+    text-align: center;
+    /* padding: .2em; */
+}
+
+.task-input {
+    border-radius: 5px;
+    border: none;
+    background-color: lightgrey;
+    min-height: 20px;
+}
 /* Card & Items CSS End */

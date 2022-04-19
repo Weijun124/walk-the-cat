@@ -27,6 +27,20 @@ app.get("/item/", async (req, res) => {
   res.send(todo.rows);
 });
 
+//Create a Todo
+app.post('/item/', (req, res) => {
+  let { card_id, description, status_label } = req.body;
+
+  pool
+      .query(`INSERT INTO item_table(card_id, description, status_label) VALUES ($1, $2, $3) RETURNING *;`, [
+          card_id,
+          description, 
+          status_label, 
+      ])
+      .then((result) => res.status(201).send(result.rows[0]))
+      .catch((err) => res.sendStatus(500));
+});
+
 //Patch a todo
 app.patch("/item/", (req, res) => {
   const { description, item_id } = req.body;
