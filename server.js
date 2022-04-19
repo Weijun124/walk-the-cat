@@ -32,13 +32,13 @@ app.post('/item/', (req, res) => {
   let { card_id, description, status_label } = req.body;
 
   pool
-      .query(`INSERT INTO item_table(card_id, description, status_label) VALUES ($1, $2, $3) RETURNING *;`, [
-          card_id,
-          description, 
-          status_label, 
-      ])
-      .then((result) => res.status(201).send(result.rows[0]))
-      .catch((err) => res.sendStatus(500));
+    .query(`INSERT INTO item_table(card_id, description, status_label) VALUES ($1, $2, $3) RETURNING *;`, [
+      card_id,
+      description,
+      status_label,
+    ])
+    .then((result) => res.status(201).send(result.rows[0]))
+    .catch((err) => res.sendStatus(500));
 });
 
 //Patch a todo
@@ -48,6 +48,16 @@ app.patch("/item/", (req, res) => {
     `UPDATE item_table SET description = $1 WHERE item_id = $2`, [description, item_id]
   )
   res.send()
+})
+
+//Delete a todo
+app.delete("/item/", (req, res) => {
+  const { item_id } = req.body;
+  console.log(item_id);
+  pool.query(
+    `DELETE FROM item_table WHERE item_id = $1`, [item_id]
+  )
+  res.send();
 })
 
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
