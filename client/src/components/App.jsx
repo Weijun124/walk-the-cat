@@ -7,10 +7,6 @@ import Header from './Header';
 
 const App = () => {
   const [data, setData] = useState([]);
-  const [id, setId] = useState();
-  const [description, setDescription] = useState();
-  // console.log(data);
-  // console.log(id);
 
   useEffect(() => {
     fetchData();
@@ -25,8 +21,6 @@ const App = () => {
   return (
     <div className="App">
       <NavBar className="nav-bar" data={data}/>
-      {/* <Header className="header" data={} /> */}
-      {/* <NavBar className="navbar" data={} /> */}
       <Header className="header" />
       <div className="board-container">
       {data.map((element) => (
