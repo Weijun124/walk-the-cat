@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Status from "./Status"
 import axios from "axios";
 import DeleteCard from './Delete';
+import{useDrag} from "react-dnd";
 const Card = props => {
+  const {id}=props;
 
   const [toggle, setToggle] = useState(true);
   const [description, setDescription] = useState(props.data);
@@ -10,9 +12,17 @@ const Card = props => {
   const handleEdit = (update) => {
     axios.patch("/item", update);
   }
-  console.log(props)
+  const[{isDragging},dragRef]=useDrag({
+    type:'task',
+    item:{id},
+    collect:(monitor)=>({
+        isDragging:monitor.isDragging(),
+    }),
+});
+
   return (
-    <div className={"item-container"} onDoubleClick={() => { setToggle(false) }}>
+    <div className={"item-container"} onDoubleClick={() => { setToggle(false) }}
+    ref={dragRef}>
       <Status status={props.status} />
       <DeleteCard item_id={props.item_id} />
       {toggle ? (

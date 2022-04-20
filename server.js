@@ -50,6 +50,14 @@ app.patch("/item/", (req, res) => {
   res.send()
 })
 
+app.patch("/item123", (req, res) => {
+  const { card_id,status_label, item_id } = req.body;
+  pool.query(
+    `UPDATE item_table SET card_id=$1,status_label=$2 WHERE item_id = $3 `, [card_id,status_label,item_id]
+  )
+  res.send('works')
+})
+
 //Delete a todo
 app.delete("/item/", (req, res) => {
   const { item_id } = req.body;
