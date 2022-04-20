@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [data]);
 
   async function fetchData() {
     const response = await axios.get("/item");
