@@ -6,7 +6,7 @@ import{useDrop} from "react-dnd";
 
 
 const CardContainer = (props) => {
-  console.log(props)
+  // console.log(props)
 
   // console.log("CardContainer:",props.data);
   let cardId;

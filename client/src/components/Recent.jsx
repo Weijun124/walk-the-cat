@@ -32,9 +32,17 @@ const Recent = (props) => {
         <div className="dropdown">
             <button onClick={onClick} id="rec" className="nav-dropdown-btn">Recent <img className="arrow-icon" src="./pictures/down-arrow-icon.png"/></button>
             <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <div className="dropdown-title">Recent Boards</div>
+                <div className="dopdown-list">
+                    <div className="dropdown-list-content">
+                        <div className="dropdown-list-image">WTC</div>
+                        <a href="#">Walk the Cat</a>
+                    </div>
+                    <div className="dropdown-list-content">
+                        <div className="dropdown-list-image-kb"></div>
+                        <a href="#">Kanban Board</a>
+                    </div>
+                </div>
             </nav>
         </div>
     );
