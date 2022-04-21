@@ -3,6 +3,7 @@ import '../App.css';
 import Workspace from "./Workspace";
 import Recent from "./Recent";
 import More from "./More";
+import Help from "./Help";
 import axios from 'axios';
 
 
@@ -37,11 +38,11 @@ const NavBar = (props) => {
             </div>
             <div className="nav-right">
                 <button className="search-button">
-                    {/* <i className="fa-solid fa-magnifying-glass"></i> */}
                     <img src="./pictures/search-icon.png" />
                 </button>
                 <input className="nav-search" type="text" placeholder="Search"/>
-                <p className="help">i</p>
+                <Help className="dropdown" data={data}/>
+                {/* <button className="help">i</button> */}
                 <a className="notification-icon"><img src="./pictures/notification-icon.png"/></a>
                 <a className="gitHub" href="https://github.com/walk-the-cat/walk-the-cat/"><img id="gitIcon" src="pictures/GitHub-Mark-Light-32px.png" border="0" /></a>
             </div>
