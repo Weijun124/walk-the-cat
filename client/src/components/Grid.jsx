@@ -5,11 +5,13 @@ const Grid = (props) => {
     const dropdownRef = useRef(null);
     const [isActive, setIsActive] = useState(false);
 
+    const onClick = (e) => {
+        if(e.target.id === "grid") setIsActive(prev => !prev);
+    }
+    
     useEffect(() => {
         const closeDropDown = e => {
-            console.log(e)
-            if (e.path[0].tagName !== 'BUTTON') {
-                if (e.target.id === 'grid') setIsActive(!isActive)
+            if (e.path[0].tagName !== 'BUTTON' && e.target.id !== "grid") {
                 setIsActive(false)
             }
         }
@@ -20,7 +22,7 @@ const Grid = (props) => {
 
     return (
         <div className="dropdown">
-            <button ref={dropdownRef} onClick={() => setIsActive(prev => !prev)} id="grid" className="nav-menu">
+            <button ref={dropdownRef} onClick={onClick} id="grid" className="nav-menu">
                 <span id="grid" className="square"></span>
                 <span id="grid" className="square"></span>
                 <span id="grid" className="square"></span>

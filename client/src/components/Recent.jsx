@@ -6,10 +6,14 @@ const Recent = (props) => {
 
     const [isActive, setIsActive] = useState(false);
 
+    const onClick = (e) => {
+        if(e.target.id === "rec") setIsActive(prev => !prev);
+    }
+
     useEffect(() => {
         const closeDropDown = e => {
             console.log(e)
-            if (e.path[0].tagName !== 'BUTTON') {
+            if (e.path[0].tagName !== 'BUTTON' && e.target.id !== "rec") {
                 setIsActive(false)
             }
         }
@@ -20,7 +24,7 @@ const Recent = (props) => {
 
     return (
         <div className="dropdown">
-            <button ref={dropdownRef} onClick={() => setIsActive(prev => !prev)} id="rec" className="nav-dropdown-btn">Recent <img className="arrow-icon" src="./pictures/down-arrow-icon.png" /></button>
+            <button ref={dropdownRef} onClick={onClick} id="rec" className="nav-dropdown-btn">Recent <img id="rec" className="arrow-icon" src="./pictures/down-arrow-icon.png" /></button>
             <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
                 <div className="dropdown-title">Recent Boards</div>
                 <div className="dopdown-list">

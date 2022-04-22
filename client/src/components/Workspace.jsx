@@ -5,10 +5,14 @@ const Workspace = (props) => {
     const [isActive, setIsActive] = useState(false);
     const dropdownRef = useRef(null);
 
+    const onClick = (e) => {
+        if(e.target.id === "ws") setIsActive(prev => !prev);
+    }
+
     useEffect(() => {
         const closeDropDown = e => {
             console.log(e)
-            if (e.path[0].tagName !== 'BUTTON') {
+            if (e.path[0].tagName !== 'BUTTON' && e.target.id !== "ws") {
                 setIsActive(false)
             }
         }
@@ -19,7 +23,7 @@ const Workspace = (props) => {
 
     return (
         <div className="dropdown">
-            <button ref={dropdownRef} onClick={() => setIsActive(prev => !prev)} id="ws" className="nav-dropdown-btn">Workspaces <img className="arrow-icon" src="./pictures/down-arrow-icon.png" /></button>
+            <button ref={dropdownRef} onClick={onClick} id="ws" className="nav-dropdown-btn">Workspaces <img id="ws" className="arrow-icon" src="./pictures/down-arrow-icon.png" /></button>
             <nav className={'menu ' + (isActive ? 'active' : 'inactive')}>
                 <div className="dropdown-title">Workspaces</div>
                 <div className="dopdown-list">
