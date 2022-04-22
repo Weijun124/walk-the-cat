@@ -477,6 +477,13 @@ textarea {
     width: 272px;
 }
 
+.card-header {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: .5em;
+    margin-left: .7em;
+}
+
 
 .item-container {
     background-color: #fff;
@@ -518,6 +525,11 @@ textarea {
 .delete {
     background-color: white;
     border: none;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .add-item-card {

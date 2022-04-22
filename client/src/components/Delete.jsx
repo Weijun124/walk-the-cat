@@ -16,7 +16,7 @@ const DeleteCard = props => {
   }
 
   return (
-    <button className='delete' onClick={deleteCard}>&#10060;</button>
+    <button className='delete' onClick={deleteCard}><img src="./pictures/delete-icon.png"/></button>
   )
 };
 
