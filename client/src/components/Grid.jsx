@@ -32,20 +32,28 @@ const Grid = (props) => {
                 <span id="grid" className="square"></span>
             </button>
             <nav ref={dropdownRef} className={`grid-menu ${isActive ? 'active' : 'inactive'}`}>
-                <div className="dropdown-title">More Resouces</div>
+                <div className="dropdown-title">Website Engineers</div>
                 <div className="dopdown-list">
-                    <div className="dropdown-list-title">Discover</div>
+                    <div className="dropdown-list-title">LinkedIn Profiles</div>
                     <div className="dropdown-list-content">
-                        <div className="dropdown-list-image-sta"></div>
-                        <a href="https://resources.bestfriends.org/article/walking-cat">Save Them All</a>
+                        <img className="dropdown-list-image" src="./pictures/creator-image-weijun.jpeg"/>
+                        <a href="linkedin.com/in/weijun-huang-631633104">Weijun Huang</a>
                     </div>
                     <div className="dropdown-list-content">
-                        <div className="dropdown-list-image-th"></div>
-                        <a href="https://www.treehugger.com/how-to-train-your-cat-to-walk-on-a-leash-4863691">Treehugger</a>
+                        <img className="dropdown-list-image" src="./pictures/creator-image-colt.jpeg"/>
+                        <a href="https://www.linkedin.com/in/coltskeen/">Colt Skeen</a>
                     </div>
                     <div className="dropdown-list-content">
-                        <div className="dropdown-list-image-rspca"></div>
-                        <a href="https://kb.rspca.org.au/knowledge-base/should-i-walk-my-cat-on-a-leash/">RSPCA Knowledge Base</a>
+                        <img className="dropdown-list-image" src="./pictures/creator-image-shaun.jpeg"/>
+                        <a href="https://www.linkedin.com/in/houcksm/">Shaun Houck</a>
+                    </div>
+                    <div className="dropdown-list-content">
+                        <img className="dropdown-list-image" src="./pictures/creator-image-isaias.jpeg"/>
+                        <a href="https://www.linkedin.com/in/isaias-medellin/">Isaias Medellin</a>
+                    </div>
+                    <div className="dropdown-list-content">
+                        <img className="dropdown-list-image" src="./pictures/creator-image-daniel.jpeg"/>
+                        <a href="https://www.linkedin.com/in/daniel-moyo/">Daniel Moyo</a>
                     </div>
                 </div>
             </nav>
