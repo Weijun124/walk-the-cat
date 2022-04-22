@@ -23,7 +23,7 @@ const Help = (props) => {
                 <div className="dropdown-title">Information</div>
                 <img className="star-board-pic" src="./pictures/help-dropdown-pic.png" />
                 <div className="dropdown-help-description">
-                    Get inspired by dozens of different Trello workflows
+                    Get inspired by dozens of different Walk the Cat workflows
                     <a id="help-link">Get a new tip.</a>
                 </div>
                 <nav className="help-link-menu">
