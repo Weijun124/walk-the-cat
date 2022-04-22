@@ -6,9 +6,7 @@ import{useDrop} from "react-dnd";
 
 
 const CardContainer = (props) => {
-  // console.log(props)
 
-  // console.log("CardContainer:",props.data);
   let cardId;
   const[{isOver},dropfromTodo]=useDrop({
     accept:"task",
@@ -16,8 +14,9 @@ const CardContainer = (props) => {
     collect:(monitor)=>({isOver:!!monitor.isOver()}),
   });
 
-  const columnidswitch = (update) => {
-    axios.patch("/item123", update);
+  const columnidswitch = async (update) => {
+   await axios.patch("/item123", update);
+   props.update()
   }
 
   const changeStatus=(taskid)=>{
@@ -37,6 +36,7 @@ const CardContainer = (props) => {
   const onClick = (e) => {
     cardId = props.data.id;
     createCard();
+
   }
 
   const createCard = () => {
@@ -46,7 +46,7 @@ const CardContainer = (props) => {
       status_label: (cardId === 1) ? false : true
     })
       .then((response) => {
-  
+        props.update()
       })
       .catch((err) => {
         if (err.response) console.log("server responded:", err.response);
@@ -62,7 +62,7 @@ const CardContainer = (props) => {
         {props.data.title}
       </div>
       {props.data.description.map((element, index) => (
-        <Card id={props.data.item_id[index]} data={element} item_id={props.data.item_id[index]} key={props.data.item_id[index]} status={props.data.status[index]} />
+        <Card id={props.data.item_id[index]} data={element} item_id={props.data.item_id[index]} key={props.data.item_id[index]} status={props.data.status[index]} update={props.update} />
       ))}
     
       <span className="add-item-card">
