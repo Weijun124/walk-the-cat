@@ -8,7 +8,7 @@ const Workspace = (props) => {
     const [isActive, setIsActive] = useState(false);
 
     const onClick = (e) => {
-        console.log(e.target.id === "ws");
+        // console.log(e.target.id === "ws");
         if(e.target.id === "ws") setIsActive(!isActive);
     }
 
