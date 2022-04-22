@@ -6,6 +6,7 @@ import{useDrag} from "react-dnd";
 const Card = props => {
   const {id}=props;
 
+
   const [toggle, setToggle] = useState(true);
   const [description, setDescription] = useState(props.data);
 
@@ -24,7 +25,7 @@ const Card = props => {
     <div className={"item-container"} onDoubleClick={() => { setToggle(false) }}
     ref={dragRef}>
       <Status status={props.status} />
-      <DeleteCard item_id={props.item_id} />
+      <DeleteCard item_id={props.item_id} update={props.update}/>
       {toggle ? (
         description
       ) : (
