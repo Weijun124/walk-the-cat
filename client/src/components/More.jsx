@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../App.css';
 
 const More = (props) => {
@@ -6,34 +6,23 @@ const More = (props) => {
 
     const [isActive, setIsActive] = useState(false);
 
-    const onClick = (e) => {
-        // console.log(e.target.id === "rec");
-        if(e.target.id === "mor") setIsActive(!isActive);
-    }
-
-    // useEffect(() => {
-    //     const pageClickEvent = (e) => {
-    //         // console.log(e);
-    //         // console.log(dropdownRef);
-    //         // console.log(dropdownRef.current);
-            
-    //         if(dropdownRef.current !== null && !dropdownRef.current.contains(e.target)){
-    //             setIsActive(!isActive);
-    //         }
-    //     }
-    //     if(isActive) window.addEventListener('click', pageClickEvent);
-
-    //     //clean-up
-    //     return() => window.removeEventListener('click', pageClickEvent);
-        
-    // }, [isActive]);
+    useEffect(() => {
+        const closeDropDown = e => {
+            console.log(e)
+            if (e.path[0].tagName !== 'BUTTON') {
+                setIsActive(false)
+            }
+        }
+        document.body.addEventListener('click', closeDropDown)
+        return () => document.body.removeEventListener('click', closeDropDown)
+    }, []);
 
     return (
         <div className="dropdown">
-            <button onClick={onClick} id="mor" className="nav-dropdown-btn">Starred <img className="arrow-icon" src="./pictures/down-arrow-icon.png"/></button>
+            <button ref={dropdownRef} onClick={() => setIsActive(prev => !prev)} id="mor" className="nav-dropdown-btn">Starred <img className="arrow-icon" src="./pictures/down-arrow-icon.png" /></button>
             <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
                 <div className="dropdown-title">Starred Boards</div>
-                <img className="star-board-pic" src="./pictures/StarredBoards.png"/>
+                <img className="star-board-pic" src="./pictures/StarredBoards.png" />
                 <div className="dropdown-description">Star important boards to access them quickly and easily.</div>
             </nav>
         </div>
