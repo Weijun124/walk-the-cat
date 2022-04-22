@@ -6,6 +6,7 @@ import{useDrag} from "react-dnd";
 const Card = props => {
   const {id}=props;
 
+
   const [toggle, setToggle] = useState(true);
   const [description, setDescription] = useState(props.data);
 
@@ -42,7 +43,7 @@ const Card = props => {
           }} />
         )
         }
-        <DeleteCard className="delete-card" item_id={props.item_id} />
+        <DeleteCard className="delete-card" item_id={props.item_id} update={props.update} />
       </div>
     </div>
   )
