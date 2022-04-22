@@ -24,24 +24,26 @@ const Card = props => {
     <div className={"item-container"} onDoubleClick={() => { setToggle(false) }}
     ref={dragRef}>
       <Status status={props.status} />
-      <DeleteCard item_id={props.item_id} />
-      {toggle ? (
-        description
-      ) : (
-        <input className="task-input" type='text' value={description} onChange={(event) => {
-          setDescription(event.target.value)
-        }} onKeyDown={(event) => {
-          if (event.keyCode === 13) {
-            const update = {
-              description: event.target.value,
-              item_id: props.item_id
+      <div className="task-container">
+        {toggle ? (
+          description
+        ) : (
+          <input className="task-input" type='text' value={description} onChange={(event) => {
+            setDescription(event.target.value)
+          }} onKeyDown={(event) => {
+            if (event.keyCode === 13) {
+              const update = {
+                description: event.target.value,
+                item_id: props.item_id
+              }
+              handleEdit(update)
+              setToggle(true)
             }
-            handleEdit(update)
-            setToggle(true)
-          }
-        }} />
-      )
-      }
+          }} />
+        )
+        }
+        <DeleteCard className="delete-card" item_id={props.item_id} />
+      </div>
     </div>
   )
 }
