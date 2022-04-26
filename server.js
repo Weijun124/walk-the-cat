@@ -7,7 +7,11 @@ const PORT = 5050;
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  database: "wtc_db",
+  // database: "wtc_db",
+  connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 });
 
 app.use(express.json());
