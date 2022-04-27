@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-const PORT = 5050;
+// const PORT = 5050;
 const { Pool } = require("pg");
 
 const pool = new Pool({
@@ -72,4 +72,4 @@ app.delete("/item/", (req, res) => {
   res.send();
 })
 
-app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
+app.listen(process.env.PORT, () => console.log(`Listening on PORT: ${process.env.PORT || 5050}`));
