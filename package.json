@@ -4,8 +4,12 @@
   "description": "Front-End-Capstone",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "concurrently \"nodemon server.js\" \"cd ./client && npm start\""
+    "heroku-prebuild": "npm install --dev && cd ./client && npm install",
+    "start": "npm run build && node server.js",
+    "build": "cd ./client && npm run build",
+    "server": "nodemon server.js",
+    "client": "cd ./client && npm start",
+    "dev": "concurrently \"nodemon server.js\" \"cd ./client && npm start\""
   },
   "repository": {
     "type": "git",
