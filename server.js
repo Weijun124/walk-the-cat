@@ -13,7 +13,7 @@ const pool = new Pool({
         rejectUnauthorized: false,
     },
 });
-app.use(express.static('build'));
+app.use(express.static('./client/build'));
 app.use(express.json());
 app.use(cors());
 
