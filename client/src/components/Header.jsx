@@ -1,10 +1,19 @@
 import React from 'react';
-// import { Drawer } from 'antd'; 
+import { Drawer } from 'antd'; 
+import { useState } from 'react';
 
 const Header = ( )=> {
-  
+    const [visible, setVisible] = useState(false);
+
+    const showDrawer = () => {
+        setVisible(true);
+    };
+    
+    const onClose = () => {
+        setVisible(false);
+    };
   return (
-  
+   <>
     <header className='header'>
       <div className='container'>
         <div className='header-left'>
@@ -25,14 +34,14 @@ const Header = ( )=> {
                 <span className="header-icon"><i className="fa-solid fa-filter"></i></span>
                 <span className="header-text">Filter</span>
             </a>    
-            <a className='header-btn'>
+            <a onClick={showDrawer} className='header-btn'>
                 <span className="header-icon"><i className="fa-solid fa-ellipsis"></i></span>
-                <span className="header-text">Show menu</span>
-            </a>   
+                <span  className="header-text">Show menu</span>
+            </a> 
         </div>
       </div>
     </header>
-
+ </>
   );
 };
 

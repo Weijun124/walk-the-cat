@@ -3,13 +3,17 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-const PORT = 5050;
+// const PORT = 5050;
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  database: "wtc_db",
+  // database: "wtc_db",
+  connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 });
-
+app.use(express.static('./client/build'));
 app.use(express.json());
 app.use(cors());
 
@@ -68,4 +72,4 @@ app.delete("/item/", (req, res) => {
   res.send();
 })
 
-app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
+app.listen(process.env.PORT, () => console.log(`Listening on PORT: ${process.env.PORT || 5050}`));
