@@ -4,7 +4,7 @@
   "description": "Front-End-Capstone",
   "main": "index.js",
   "scripts": {
-    "heroku-prebuild": "npm install --dev",
+    "heroku-prebuild": "npm install --dev && cd ./client && npm install",
     "build": "cd ./client && npm run build",
     "start": "npm run build && node server.js",
     "server": "nodemon server.js",
