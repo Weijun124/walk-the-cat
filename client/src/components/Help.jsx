@@ -7,7 +7,6 @@ const Help = (props) => {
     const [isActive, setIsActive] = useState(false);
     useEffect(() => {
         const closeDropDown = e => {
-            console.log(e)
             if (e.path[0].tagName !== 'BUTTON') {
                 setIsActive(false)
             }
