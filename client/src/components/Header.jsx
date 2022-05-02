@@ -1,20 +1,19 @@
 import React from 'react';
 import { Drawer } from 'antd'; 
 import { useState } from 'react';
+import 'antd/dist/antd.css';
 
-const Header = ( )=> {
+const Header = ()=> {
     const [visible, setVisible] = useState(false);
 
     const showDrawer = () => {
-        setVisible(true);
+      setVisible(!visible)
     };
+  
     
-    const onClose = () => {
-        setVisible(false);
-    };
   return (
    <>
-    <header className='header'>
+    <header data-testid="header-test" className='header'>
       <div className='container'>
         <div className='header-left'>
             <h1 className='header-logo header-text'>Kanban Board</h1>
@@ -34,13 +33,18 @@ const Header = ( )=> {
                 <span className="header-icon"><i className="fa-solid fa-filter"></i></span>
                 <span className="header-text">Filter</span>
             </a>    
-            <a onClick={showDrawer} className='header-btn'>
+            <a data-testid="header-drawer-btn" onClick={showDrawer} className='header-btn'>
                 <span className="header-icon"><i className="fa-solid fa-ellipsis"></i></span>
                 <span  className="header-text">Show menu</span>
             </a> 
         </div>
       </div>
     </header>
+    <Drawer data-testid="header-drawer" title="Basic Drawer" placement="right" onClose={showDrawer} visible={visible}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+    </Drawer>
  </>
   );
 };
