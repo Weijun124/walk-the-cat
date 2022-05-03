@@ -18,7 +18,7 @@ const App = () => {
   }
   // fetchData()
   return (
-    <div className="App">
+    <div data-testid="main-app" className="App">
       <NavBar className="nav-bar" data={data} />
       <Header className="header" />
       <div className="board-container" data={data} >

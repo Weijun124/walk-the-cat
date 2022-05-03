@@ -51,7 +51,8 @@ app.patch("/item/", (req, res) => {
   pool.query(
     `UPDATE item_table SET description = $1 WHERE item_id = $2`, [description, item_id]
   )
-  res.send()
+  .then((result) =>res.send(result.rows[0]))
+  .catch((err) => res.sendStatus(500));
 })
 
 app.patch("/item123", (req, res) => {
@@ -65,11 +66,13 @@ app.patch("/item123", (req, res) => {
 //Delete a todo
 app.delete("/item/", (req, res) => {
   const { item_id } = req.body;
-  console.log(item_id);
+  
   pool.query(
     `DELETE FROM item_table WHERE item_id = $1`, [item_id]
   )
-  res.send();
+  res.sendStatus(204);
 })
 
 app.listen(process.env.PORT, () => console.log(`Listening on PORT: ${process.env.PORT || 5050}`));
+
+module.exports = app;

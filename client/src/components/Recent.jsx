@@ -12,7 +12,6 @@ const Recent = (props) => {
 
     useEffect(() => {
         const closeDropDown = e => {
-            console.log(e)
             if (e.path[0].tagName !== 'BUTTON' && e.target.id !== "rec") {
                 setIsActive(false)
             }
