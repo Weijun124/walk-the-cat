@@ -7,18 +7,18 @@ const app = express();
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  database: "wtc_db",
-  // connectionString: process.env.DATABASE_URL,
-  //   ssl: {
-  //       rejectUnauthorized: false,
-  //   },
+  // database: "wtc_db",
+  connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 });
 app.use(express.static('./client/build'));
 app.use(express.json());
 app.use(cors());
 
 //Get a todo
-app.get("/item/", async (req, res) => {
+app.get("/api/item/", async (req, res) => {
   const todo = await pool.query(`
   SELECT title, id,
   ARRAY_AGG(item_table.description) as description, 
@@ -32,7 +32,7 @@ app.get("/item/", async (req, res) => {
 });
 
 //Create a Todo
-app.post('/item/', (req, res) => {
+app.post('/api/item/', (req, res) => {
   let { card_id, description, status_label } = req.body;
 
   pool
@@ -46,7 +46,7 @@ app.post('/item/', (req, res) => {
 });
 
 //Patch a todo
-app.patch("/item/", (req, res) => {
+app.patch("/api/item/", (req, res) => {
   const { description, item_id } = req.body;
   pool.query(
     `UPDATE item_table SET description = $1 WHERE item_id = $2`, [description, item_id]
@@ -55,7 +55,7 @@ app.patch("/item/", (req, res) => {
   .catch((err) => res.sendStatus(500));
 })
 
-app.patch("/item123", (req, res) => {
+app.patch("/api/item123", (req, res) => {
   const { card_id,status_label, item_id } = req.body;
   pool.query(
     `UPDATE item_table SET card_id=$1,status_label=$2 WHERE item_id = $3 `, [card_id,status_label,item_id]
@@ -64,7 +64,7 @@ app.patch("/item123", (req, res) => {
 })
 
 //Delete a todo
-app.delete("/item/", (req, res) => {
+app.delete("/api/item/", (req, res) => {
   const { item_id } = req.body;
   
   pool.query(

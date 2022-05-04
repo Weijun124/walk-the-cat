@@ -7,7 +7,7 @@ const DeleteCard = props => {
       item_id: props.item_id
     }
     console.log(id);
-    await axios.delete("/item", {
+    await axios.delete("/api/item", {
       data: {
         item_id: props.item_id
       }
@@ -16,7 +16,7 @@ const DeleteCard = props => {
   }
 
   return (
-    <button className='delete' onClick={deleteCard}><img src="./pictures/delete-icon.png"/></button>
+    <button className='delete' onClick={deleteCard}><img src="./client/public/pictures/delete-icon.png"/></button>
   )
 };
 

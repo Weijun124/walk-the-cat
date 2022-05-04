@@ -38,23 +38,23 @@ const Grid = (props) => {
                 <div className="dopdown-list">
                     <div className="dropdown-list-title">LinkedIn Profiles</div>
                     <div className="dropdown-list-content">
-                        <img className="dropdown-list-image" src="./pictures/creator-image-weijun.jpeg"/>
+                        <img className="dropdown-list-image" src="./client/public/pictures/creator-image-weijun.jpeg"/>
                         <a href="linkedin.com/in/weijun-huang-631633104">Weijun Huang</a>
                     </div>
                     <div className="dropdown-list-content">
-                        <img className="dropdown-list-image" src="./pictures/creator-image-colt.jpeg"/>
+                        <img className="dropdown-list-image" src="./client/public/pictures/creator-image-colt.jpeg"/>
                         <a href="https://www.linkedin.com/in/coltskeen/">Colt Skeen</a>
                     </div>
                     <div className="dropdown-list-content">
-                        <img className="dropdown-list-image" src="./pictures/creator-image-shaun.jpeg"/>
+                        <img className="dropdown-list-image" src="./client/public/pictures/creator-image-shaun.jpeg"/>
                         <a href="https://www.linkedin.com/in/houcksm/">Shaun Houck</a>
                     </div>
                     <div className="dropdown-list-content">
-                        <img className="dropdown-list-image" src="./pictures/creator-image-isaias.jpeg"/>
+                        <img className="dropdown-list-image" src="./client/public/pictures/creator-image-isaias.jpeg"/>
                         <a href="https://www.linkedin.com/in/isaias-medellin/">Isaias Medellin</a>
                     </div>
                     <div className="dropdown-list-content">
-                        <img className="dropdown-list-image" src="./pictures/creator-image-daniel.jpeg"/>
+                        <img className="dropdown-list-image" src="./client/public/pictures/creator-image-daniel.jpeg"/>
                         <a href="https://www.linkedin.com/in/daniel-moyo/">Daniel Moyo</a>
                     </div>
                 </div>

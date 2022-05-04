@@ -13,7 +13,7 @@ const App = () => {
   }, []);
 
   async function fetchData() {
-    const response = await axios.get("/item");
+    const response = await axios.get("api/item");
     setData(response.data);
   }
   // fetchData()

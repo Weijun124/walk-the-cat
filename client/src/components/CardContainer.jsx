@@ -15,7 +15,7 @@ const CardContainer = (props) => {
   });
 
   const columnidswitch = async (update) => {
-   await axios.patch("/item123", update);
+   await axios.patch("/api/item123", update);
    props.update()
   }
 
@@ -40,7 +40,7 @@ const CardContainer = (props) => {
   }
 
   const createCard = () => {
-    axios.post("/item", {
+    axios.post("/api/item", {
       card_id: cardId,
       description: "Double click to add task",
       status_label: (cardId === 1) ? false : true
@@ -67,7 +67,7 @@ const CardContainer = (props) => {
     
       <span className="add-item-card">
         <button onClick={onClick} className="add-card">+ Add a card</button>
-        <button className="add-template-card"><img src="./pictures/template-icon.png" /></button>
+        <button className="add-template-card"><img src="./client/public/pictures/template-icon.png" /></button>
       </span>
     </div>
   );

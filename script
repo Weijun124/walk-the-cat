@@ -1,0 +1,9 @@
+  // "scripts": {
+  //   "heroku-prebuild": "npm install --dev && cd ./client && npm install",
+  //   "start": "npm run build && node server.js",
+  //   "build": "cd ./client && npm run build",
+  //   "server": "nodemon server.js",
+  //   "client": "cd ./client && npm start",
+  //   "dev": "concurrently \"nodemon server.js\" \"cd ./client && npm start\"",
+  //   "test": "jest"
+  // },

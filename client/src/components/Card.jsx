@@ -11,7 +11,7 @@ const Card = props => {
   const [description, setDescription] = useState(props.data);
 
   const handleEdit = (update) => {
-    axios.patch("/item", update);
+    axios.patch("/api/item", update);
   }
   const[{isDragging},dragRef]=useDrag({
     type:'task',

@@ -20,7 +20,7 @@ const Help = (props) => {
             <button ref={dropdownRef} onClick={() => setIsActive(prev => !prev)} id="help" className="nav-dropdown-help-btn">i </button>
             <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
                 <div className="dropdown-title">Information</div>
-                <img className="star-board-pic" src="./pictures/help-dropdown-pic.png" />
+                <img className="star-board-pic" src="./client/public/pictures/help-dropdown-pic.png" />
                 <div className="dropdown-help-description">
                     Get inspired by dozens of different Walk the Cat workflows
                     <a id="help-link">Get a new tip.</a>

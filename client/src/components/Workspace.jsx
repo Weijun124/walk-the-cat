@@ -22,7 +22,7 @@ const Workspace = (props) => {
 
     return (
         <div className="dropdown">
-            <button ref={dropdownRef} onClick={onClick} id="ws" className="nav-dropdown-btn">Workspaces <img id="ws" className="arrow-icon" src="./pictures/down-arrow-icon.png" /></button>
+            <button ref={dropdownRef} onClick={onClick} id="ws" className="nav-dropdown-btn">Workspaces <img id="ws" className="arrow-icon" src="./client/public/pictures/down-arrow-icon.png" /></button>
             <nav className={'menu ' + (isActive ? 'active' : 'inactive')}>
                 <div className="dropdown-title">Workspaces</div>
                 <div className="dopdown-list">

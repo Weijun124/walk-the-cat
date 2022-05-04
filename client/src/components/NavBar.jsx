@@ -17,7 +17,7 @@ const NavBar = (props) => {
             <div className="nav-left">
                 <Grid className="dropdown" data={data}/>
                 <div className="logo">
-                    <img src="./pictures/cat-logo.png" />
+                    <img src="./client/public/pictures/cat-logo.png" />
                 </div>
                 <div className="dropdown-container">
                     <Workspace className="dropdown" data={data}/>
@@ -28,12 +28,12 @@ const NavBar = (props) => {
             </div>
             <div className="nav-right">
                 <button className="search-button">
-                    <img src="./pictures/search-icon.png" />
+                    <img src="./client/public/pictures/search-icon.png" />
                 </button>
                 <input className="nav-search" type="text" placeholder="Search"/>
                 <Help className="dropdown" data={data}/>
-                <a className="notification-icon"><img src="./pictures/notification-icon.png"/></a>
-                <a className="gitHub" href="https://github.com/walk-the-cat/walk-the-cat/"><img id="gitIcon" src="pictures/GitHub-Mark-Light-32px.png" border="0" /></a>
+                <a className="notification-icon"><img src="./client/public/pictures/notification-icon.png"/></a>
+                <a className="gitHub" href="https://github.com/walk-the-cat/walk-the-cat/"><img id="gitIcon" src="./client/public/pictures/GitHub-Mark-Light-32px.png" border="0" /></a>
             </div>
         </header>
     )

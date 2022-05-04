@@ -23,7 +23,7 @@ const Recent = (props) => {
 
     return (
         <div className="dropdown">
-            <button ref={dropdownRef} onClick={onClick} id="rec" className="nav-dropdown-btn">Recent <img id="rec" className="arrow-icon" src="./pictures/down-arrow-icon.png" /></button>
+            <button ref={dropdownRef} onClick={onClick} id="rec" className="nav-dropdown-btn">Recent <img id="rec" className="arrow-icon" src="./client/public/pictures/down-arrow-icon.png" /></button>
             <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
                 <div className="dropdown-title">Recent Boards</div>
                 <div className="dopdown-list">
