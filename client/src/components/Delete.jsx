@@ -6,7 +6,7 @@ const DeleteCard = props => {
     const id = {
       item_id: props.item_id
     }
-    console.log(id);
+    
     await axios.delete("/api/item", {
       data: {
         item_id: props.item_id
