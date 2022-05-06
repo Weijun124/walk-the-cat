@@ -30,6 +30,7 @@ jobs:
     - run: cd client
     - run: npm i
     - run: cd ..
+    - run: npm test
     
   container:
     needs: build_1
