@@ -39,8 +39,8 @@ jobs:
     - uses: actions/checkout@v3
     - run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
     - run: docker pull weijunhuang/postgres
-    - run: psql -U dbuser
-    - run: \c test
+    - run: \c tes
+# by using docker exec -it postgres psql -U app -d blueocean
   
   test:
     runs-on: ubuntu-latest
